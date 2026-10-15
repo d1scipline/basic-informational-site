@@ -87,9 +87,13 @@
       html {
         display: flex;
         justify-content: center;
+        min-height: 100%;
       }
       body {
         width: min(80%, 900px);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
 
       /* Navbar styling */
@@ -122,6 +126,12 @@
         justify-content: center;
         align-items: center;
         font-size: 18px;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          font-size: 8px;
+        }
       }
     </style>
   </head>

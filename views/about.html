@@ -74,8 +74,8 @@
       }
 
       /*
-  10. Create a root stacking context
-*/
+        10. Create a root stacking context
+      */
       #root,
       #__next {
         isolation: isolate;
@@ -87,9 +87,13 @@
       html {
         display: flex;
         justify-content: center;
+        min-height: 100%;
       }
       body {
         width: min(80%, 900px);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
 
       /* Navbar styling */
@@ -123,6 +127,61 @@
         align-items: center;
         font-size: 18px;
       }
+
+      @media (max-width: 768px) {
+        nav {
+          font-size: 8px;
+        }
+      }
+
+      h2 {
+        font-size: 48px;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        text-align: center;
+      }
+
+      p {
+        font-size: 18px;
+        color: gray;
+      }
+
+      main a {
+        background-color: rgb(0, 98, 255);
+        color: white;
+        padding: 12px 12px;
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: 600;
+        transition: all 0.15s;
+      }
+
+      main a:hover {
+        transform: translateY(-2px);
+        color: rgb(236, 235, 235);
+        background-color: rgb(1, 87, 226);
+      }
+
+      img {
+        border-radius: 8px;
+      }
+
+      main {
+        margin-bottom: 48px;
+      }
+
+      footer {
+        font-size: 15px;
+        padding: 8px;
+        margin-top: auto;
+        align-self: center;
+      }
     </style>
   </head>
   <body>
@@ -135,7 +194,19 @@
       </div>
     </nav>
     <main>
-      <h2>About</h2>
+      <h2>About Us</h2>
+      <img src="https://picsum.photos/600" />
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi delectus
+        omnis maxime autem explicabo, eius deserunt corporis, in non magnam
+        placeat doloremque veniam aliquid deleniti dignissimos sed! Enim, velit
+        sequi.
+      </p>
+      <a href="/contact-me">Contact Us</a>
     </main>
+    <footer>
+      © 2026 ZenFo. Built as part of the Odin Project curriculum to practice
+      Node concepts.
+    </footer>
   </body>
 </html>
