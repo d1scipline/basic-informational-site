@@ -5,132 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZenFo</title>
     <style>
-      /* 1. Use a more-intuitive box-sizing model */
       *,
       *::before,
       *::after {
         box-sizing: border-box;
-      }
-
-      /* 2. Remove default margin */
-      *:not(dialog) {
+        font-family: sans-serif;
         margin: 0;
       }
 
-      /* 3. Enable keyword animations */
-      @media (prefers-reduced-motion: no-preference) {
-        html {
-          interpolate-size: allow-keywords;
-        }
-      }
-
       body {
-        /* 4. Increase line-height */
+        width: min(92%, 900px);
+        margin-inline: auto;
+        min-height: 100vh;
         line-height: 1.5;
-        /* 5. Improve text rendering */
         -webkit-font-smoothing: antialiased;
       }
 
-      /* 6. Improve media defaults */
-      img,
-      picture,
-      video,
-      canvas,
-      svg {
-        display: block;
-        max-width: 100%;
-      }
-
-      /* 7. Inherit fonts for form controls */
-      input,
-      button,
-      textarea,
-      select {
-        font: inherit;
-      }
-
-      /* 8. Avoid text overflows */
-      p,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        overflow-wrap: break-word;
-      }
-
-      /* 9. Improve line wrapping */
-      p {
-        text-wrap: pretty;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        text-wrap: balance;
-      }
-
-      /*
-  10. Create a root stacking context
-*/
-      #root,
-      #__next {
-        isolation: isolate;
-      }
-
-      * {
-        font-family: sans-serif;
-      }
-      html {
-        display: flex;
-        justify-content: center;
-        min-height: 100%;
-      }
-      body {
-        width: min(80%, 900px);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      /* Navbar styling */
       nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px 0;
       }
 
       h1 {
         color: rgb(0, 98, 255);
       }
 
-      a {
-        all: unset;
+      .nav-bar {
+        display: flex;
+        gap: 16px;
+        font-size: 16px;
+      }
+
+      .nav-bar a {
+        text-decoration: none;
         color: gray;
         transition: color 0.15s;
       }
 
-      a:hover {
-        cursor: pointer;
+      .nav-bar a:hover {
         color: rgb(0, 191, 255);
       }
 
-      .nav-bar {
-        display: flex;
-        gap: 9px;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
+      main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        padding: 28px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
       }
 
-      @media (max-width: 768px) {
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font: inherit;
+      }
+
+      textarea {
+        resize: none;
+        height: 110px;
+      }
+
+      button {
+        background-color: rgb(0, 98, 255);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        align-self: flex-start;
+        transition:
+          transform 0.15s,
+          background-color 0.15s;
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+        background-color: rgb(1, 87, 226);
+      }
+
+      @media (max-width: 600px) {
         nav {
-          font-size: 8px;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+
+        main {
+          grid-template-columns: 1fr;
+          padding: 20px;
+        }
+
+        button {
+          width: 100%;
         }
       }
     </style>
@@ -144,6 +132,32 @@
         <a href="#">Contact</a>
       </div>
     </nav>
-    <h2>Contact</h2>
+    <main>
+      <section class="info">
+        <div>
+          <h3>📞 Call Us</h3>
+          <div>1 (234) 567-891, 1 (234) 987-654</div>
+        </div>
+        <div>
+          <h3>📍 Location</h3>
+          <div>121 Rock Street, 21 Avenue</div>
+        </div>
+        <div>
+          <h3>✉️ Email</h3>
+          <div>contact@notarealaddress.com</div>
+        </div>
+      </section>
+      <section class="form">
+        <h2>Contact Us</h2>
+        <input type="text" required placeholder="Enter your Name" />
+        <input
+          type="email"
+          required
+          placeholder="Enter a valid email address"
+        />
+        <textarea></textarea>
+        <button>Submit</button>
+      </section>
+    </main>
   </body>
 </html>
