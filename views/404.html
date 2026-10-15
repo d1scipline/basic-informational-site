@@ -133,6 +133,56 @@
           font-size: 8px;
         }
       }
+
+      footer {
+        font-size: 15px;
+        padding: 8px;
+        margin-top: auto;
+        align-self: center;
+      }
+
+      h2 {
+        font-size: 96px;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .page-not-found-1 {
+        font-size: 36px;
+      }
+
+      .page-not-found-2 {
+        font-size: 24px;
+        color: gray;
+      }
+
+      .page-not-found-3 {
+        font-size: 16px;
+      }
+
+      main a {
+        margin-top: 24px;
+        margin-bottom: 48px;
+        background-color: rgb(0, 98, 255);
+        color: white;
+        padding: 12px 12px;
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: 600;
+        transition: all 0.15s;
+      }
+
+      main a:hover {
+        transform: translateY(-2px);
+        color: rgb(236, 235, 235);
+        background-color: rgb(1, 87, 226);
+      }
     </style>
   </head>
   <body>
@@ -144,6 +194,16 @@
         <a href="/contact-me">Contact</a>
       </div>
     </nav>
-    <h2>404 Not Found</h2>
+    <main>
+      <h2>404</h2>
+      <p class="page-not-found-1">Oops, This Page Not Found!</p>
+      <p class="page-not-found-2">The link might be corrupted.</p>
+      <p class="page-not-found-3">or the page may have been removed</p>
+      <a href="/">Go Back Home</a>
+    </main>
+    <footer>
+      © 2026 ZenFo. Built as part of the Odin Project curriculum to practice
+      Node concepts.
+    </footer>
   </body>
 </html>
